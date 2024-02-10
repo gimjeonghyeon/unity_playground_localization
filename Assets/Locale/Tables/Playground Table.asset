@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Playground Table
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: a8c087e24c1a4094c8169799c5be4085, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: aceacd7902b90264b971220d01dfc99f, type: 2}
+  - {fileID: 11400000, guid: 5104962a7c0e51b4287123446cb37135, type: 2}
+  - {fileID: 11400000, guid: 649c25de5d61f09408b6dd7ab556e8d1, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []
