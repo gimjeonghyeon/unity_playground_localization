@@ -72,3 +72,21 @@
     3. 플랫폼별 override 기능 제공
 
 ![Untitled 9](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/33be0aea-1f2a-4d2d-890f-2c6b53131453)
+
+
+# 이벤트로 String 적용
+
+1. Text 컴포넌트가 있는 게임오브젝트에 Localize String Event 컴포넌트 추가
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/c1ebc4a9-7c69-4426-b05d-8bb546783881)
+
+
+2. Edit > Preferences > Localization 의 아래 설정 해제
+(String Reference를 선택할 때 UI가 달라지는 것으로 보임)
+- Asset Search Picker
+- String Search Picker
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/9cef40f3-830c-4043-8233-474d9eb06b8b)
+
+
+3. 
