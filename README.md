@@ -2,7 +2,7 @@
 
 ### 학습자료
 
-https://youtu.be/VNhzMEsy7xc?t=942&si=ABLj3PNpgoFTm-S4
+https://youtu.be/VNhzMEsy7xc?si=OIAkCC3lYkk9HLii&t=1351
 
 # Localization Settings
 
@@ -74,7 +74,7 @@ https://youtu.be/VNhzMEsy7xc?t=942&si=ABLj3PNpgoFTm-S4
 ![Untitled 9](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/33be0aea-1f2a-4d2d-890f-2c6b53131453)
 
 
-# 이벤트로 String 적용
+# 이벤트를 통한 String 적용
 
 ### 1. Text 컴포넌트가 있는 게임오브젝트에 Localize String Event 컴포넌트 추가
 
@@ -106,6 +106,10 @@ https://youtu.be/VNhzMEsy7xc?t=942&si=ABLj3PNpgoFTm-S4
 
 ![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/6753425c-f5dc-4288-bf24-95d40e0eb69e)
 
+- Window > Asset Management > Localization Scene Controls 에서 Active Locale을 변경하여 Editor에서 동작 확인 가
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/b9292bd6-0ac2-41e9-893b-e7fee72c7004)
+
 
 ### 5. 플레이 모드에서 언어를 변경하여 Update String이 정상적으로 동작하는지 확인 가능
 
@@ -120,3 +124,58 @@ https://youtu.be/VNhzMEsy7xc?t=942&si=ABLj3PNpgoFTm-S4
 - Entry Name : 키 값
 
 ![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/f700e36a-3aa6-4b25-a1fe-c72bcf9be1d6)
+
+# 이벤트를 통한 Asset 적용
+
+### 1. Asset Table 생성
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/a6570bc1-8a43-42f8-9477-785e5a43c4b6)
+
+### 2. 데이터 추가
+- Key값 설정 후 2D Texture가 아닌 Sprite로 에셋 데이터 추가
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/e14e16f6-e5e3-46f0-a5bb-03d68ced3f20)
+
+### 3. 이벤트 추가
+- 컴포넌트의 (...) 버튼 클릭후 Localize를 선택하는 방법으로 이벤트 추가 가능 (Localize Sprite Event 컴포넌트가 추가 됨)
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/8e5cc66b-f23d-4c34-bdba-8ff460c3a42d)
+
+- 해당 방식으로 이벤트가 추가된 경우 Update Asset 이벤트가 기본으로 설정 되어 있음
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/310a6921-6d1e-41ff-899e-4c20b86eaeee)
+
+### 4. Localized Asset Reference 설정
+- 추가해준 Asset Table의 Key값으로 설정
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/a83020fd-b18c-43c6-95f4-603ce628f7e0)
+
+### 5. 플레이 모드로 진입하여 언어 선택에 따라 Sprite가 변경되는 것 확인
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/d3c59e08-9669-41f7-b5a1-751897fcff2c)
+
+
+# 선택된 언어에 따라 레이아웃 변경
+
+### 1. Localization Scene Controls 의 Track Changes 화성화
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/493080b0-58de-4e8d-9c5f-14ef2563537a)
+
+### 2. 레이아웃 변경이 필요한 게임오브젝트 위치 변경
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/963be706-0053-4e22-be6a-b7cb0f039508)
+
+
+### 3. 변경이 발생한 내용 확인
+
+- 변경이 발생한 속성은 초록색으로 표시 됨
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/5d434f1b-7f70-497e-824c-d81d5a19dad3)
+
+- 변경이 발생하는 경우 Game Object Localizer 컴포넌트가 게임오브젝트에 자동으로 추가되며, Tacked Objects에서 언어별 설정된 상세 내용 확인 가능
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/6f481bc6-d678-4c23-9ecb-f5a82c40c3fa)
+
+### 4. 작업이 완료된 이후 Track Changes 비활성화
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/f17e12c6-ec33-403d-bb1a-f40594ee1175)
