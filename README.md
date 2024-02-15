@@ -17,23 +17,23 @@ https://youtu.be/VNhzMEsy7xc?si=OIAkCC3lYkk9HLii&t=1351
 
 # 사용 언어 설정
 
-1. Locale Generator 선택
+### 1. Locale Generator 선택
 
 ![Untitled](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/0374c98d-b097-436c-90cb-e989884cb0a9)
 
-1. 원하는 언어를 선택 후 Generate Locales 선택
+### 1. 원하는 언어를 선택 후 Generate Locales 선택
 
 ![Untitled 1](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/c7b72ff4-7ee4-4bfb-9c94-3cac5e19f075)
 
-2. 생성된 Locale 파일들 확인
+### 2. 생성된 Locale 파일들 확인
 
 ![Untitled 2](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/a86018e4-112d-412c-b137-6c37d0181240)
 
-3. Locale Selectors에서 Specific Locale Seletor 추가 후 생성된 Locale 연결
+### 3. Locale Selectors에서 Specific Locale Seletor 추가 후 생성된 Locale 연결
 
 ![Untitled 3](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/8a96398a-f23f-4366-9ccd-145d67d54f0f)
 
-4. Project Locale Identifier 에서 프로젝트에서 사용할 기본 언어 선택
+### 4. Project Locale Identifier 에서 프로젝트에서 사용할 기본 언어 선택
 
 ![Untitled 4](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/e07fa3a1-6993-48cd-a3f9-3b26bedc7413)
 
@@ -44,7 +44,7 @@ https://youtu.be/VNhzMEsy7xc?si=OIAkCC3lYkk9HLii&t=1351
 
 ### 2. New Table Collection 탭에서 테이블 Type 및 Name 설정 후 Create
 
-![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/10ba9f10-17c0-4584-b78d-da2c668b21cd)
+![ddd](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/f615b13f-758c-42c0-ae3a-40da4bf6c28a)
 
 ### 3. 생성된 테이블 확인
 
@@ -179,3 +179,53 @@ https://youtu.be/VNhzMEsy7xc?si=OIAkCC3lYkk9HLii&t=1351
 ### 4. 작업이 완료된 이후 Track Changes 비활성화
 
 ![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/f17e12c6-ec33-403d-bb1a-f40594ee1175)
+
+
+# Smart 기능을 활용하여 별도의 데이터 처리
+
+### 1. Variables Group Asset 생성
+
+- 마우스 우클릭 > Create > Localization > Variable Group 선택
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/a3bf9d2a-68e2-4a5c-b507-f008355e7273)
+
+### 2. Variables에 필요한 데이터 추가
+
+- 추가할 데이터 형식 선택 후 아래의 값 입력
+    -- Variable Name : 참조시 사용할 이름
+    -- String : 실제 데이터
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/36e52f3d-fa4e-4326-94a2-2d0f2f98d78d)
+
+### 3. String Table에 Smart 기능을 사용할 Entry 추가
+
+- 출력해줄 Text 컴포넌트가 있는 게임오브젝트에 Localize String Event 추가 > 테이블 선택 > Add Table Entry 선택 > Entry Name 입력
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/349c7797-3815-4da4-a020-d3ba3983a543)
+
+### 4. Local Variables 를 추가
+
+- +버튼을 누른 뒤 Nested Variables Group 선택
+  -- Variable Name : Variables Group 참조시 사용할 이름 입력
+  -- Nested Variable Group : 생성해주었던 Variables Group Asset 선택
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/eedec3c6-aa04-4048-8546-92f5d815743d)
+
+### 4. Smart 기능 활성화 후 데이터 입력
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/21c76ca6-6ece-49e1-ae17-6e795adf67a6)
+
+- 데이터 입력은 중괄호 안에 Variable Group Name.Variable Name 으로 입력
+  -- 예시: {global.user-name}
+- Edit : 데이터를 입력하는 곳
+- Debug : 디버깅 가능? (단순히 Variable 데이터가 주황색으로 표시되어지는 것 같음, 틀리게 작성해도 별다른 확인이 되진 암ㅎ음)
+- Preview : 실제 플레이 모드에서 보여질 형태로 출력 (Variable 데이터가 잘못 입력된 경우 Preview 출력을 통 확인 가능)
+
+Variable이 제대로 입력되지 않은 경우 출력은 다음과 같음.
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/d61f566e-1cc6-4164-a23d-2df78a58c0fe)
+
+### 5. 언어가 변경되어도 동일하게 출력되는 Variable 데이터 확인
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/6c65f7bf-ba8a-4b4b-a5f4-de96fd120d7b)
+
