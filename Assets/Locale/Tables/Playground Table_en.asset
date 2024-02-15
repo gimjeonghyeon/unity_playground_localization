@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: a8c087e24c1a4094c8169799c5be4085, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 7115959345065492490
   m_TableData:
   - m_Id: 859589484544
     m_Localized: Language Selection
@@ -38,6 +39,15 @@ MonoBehaviour:
     m_Localized: Japanese
     m_Metadata:
       m_Items: []
+  - m_Id: 1783189714935808
+    m_Localized: '{global.user-name} has entered.'
+    m_Metadata:
+      m_Items:
+      - rid: 7115959345065492490
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 7115959345065492490
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00a08635cd550600
