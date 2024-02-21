@@ -229,3 +229,78 @@ Variable이 제대로 입력되지 않은 경우 출력은 다음과 같음.
 
 ![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/6c65f7bf-ba8a-4b4b-a5f4-de96fd120d7b)
 
+
+# 플레이 상태에서 언어 변경
+
+```C#
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Localization.Settings;
+
+public class LocaleManager : MonoBehaviour
+{
+    private bool isChanging;
+
+    public void ChangeLocale(int index)
+    {
+        if (isChanging)
+        {
+            return;
+        }
+
+        StartCoroutine(DoChangeLocale(index));
+    }
+
+    private IEnumerator DoChangeLocale(int index)
+    {
+        isChanging = true;
+        
+        // Localization 시스템의 초기화, Locales 로드, assets 프리로딩 등이 완료될 때까지 기다리기
+        // InitializationOperation이 완료되기 전에 LocalizationSettings.SelectedLocale 이 null값을 반환할 수 있음.
+        yield return LocalizationSettings.InitializationOperation;
+
+        // index를 통해 SelectedLocale 설정
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+        
+        isChanging = false;
+    }
+}
+```
+
+# 데이터를 직접 접근하여 string 가져오기
+
+```C#
+    /// <summary>
+    /// Localization 데이터에 직접 접근하여 string을 가져오기
+    /// </summary>
+    /// <returns></returns>
+    public string GetString()
+    {
+        string tableName = "Playground Table";
+        string key = "UI_TITLE";
+        var selectedLocale = LocalizationSettings.SelectedLocale;
+
+        return LocalizationSettings.StringDatabase.GetLocalizedString(tableName, key, selectedLocale);
+    }
+```
+
+# Locale이 변경될 때 처리할 이벤트 등록
+
+```C#
+    private void Start()
+    {
+        // SelectedLocale이 변경되었을 때 호출되는 이벤트 등록
+        LocalizationSettings.SelectedLocaleChanged += LocalizationSettingsOnSelectedLocaleChanged;
+    }
+
+    private void LocalizationSettingsOnSelectedLocaleChanged(Locale locale)
+    {
+        // TODO: Locale이 변경되었을 때 처리가 필요한 내용 작성
+    }
+```
+
+# CSV, Google Sheet와 호환성
+
+- CSV와 Google Sheet 내용을 가져오거나 해당 형식으로 내보내기할 수 있는 기능을 제공하고 있음.
+
+![image](https://github.com/gimjeonghyeon/unity_playground_localization/assets/17286534/ad237d5a-beab-4cac-9ed8-b959f77a584d)
